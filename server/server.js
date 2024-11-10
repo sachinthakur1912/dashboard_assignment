@@ -32,7 +32,10 @@ app.get("/auth/google/callback", async (req, res) => {
     oauth2Client.setCredentials(tokens);
     res.cookie("googleToken", tokens.access_token, {
       httpOnly: true,
-      // sameSite: "none",
+      secure: true,
+      sameSite: "none",
+      maxAge: 24 * 60 * 60 * 1000,
+      path: "/",
     });
     res.redirect(process.env.FRONTEND_URL); // Redirect to React app
   } catch (error) {
