@@ -18,7 +18,7 @@ export default {
         customBorder2: "#CB8DAA",
       },
       backgroundImage: {
-        "custom-bg": "url('src/assets/bg_image.png')",
+        "custom-bg": "url('/bg_image.png')",
       },
     },
   },

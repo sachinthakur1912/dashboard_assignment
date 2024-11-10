@@ -11,19 +11,9 @@ export default function Login() {
   const handleLogin = () => {
     window.location.href = `${import.meta.env.VITE_BACKENDURL}/auth/google`;
     console.log("login successful");
-    navigate("/");
+    // navigate("/");
   };
-  const handleLogout = async () => {
-    try {
-      await axios.get(`${import.meta.env.VITE_BACKENDURL}/auth/logout`, {
-        withCredentials: true,
-      });
-      setIsLoggedIn(false); // Update state to logged out
-      window.location.reload(); // Refresh the page
-    } catch (error) {
-      console.error("Error logging out:", error);
-    }
-  };
+
   return (
     <div className="bg-custom-bg bg-right-top flex items-center justify-center h-[100vh] bg-no-repeat ">
       <button
