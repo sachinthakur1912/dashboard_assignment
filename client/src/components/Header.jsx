@@ -32,7 +32,7 @@ export default function Header() {
           <img src={logo} className="w-[200px]" />
         </div>
 
-        <div className="px-2 py-10 md:px-8 flex flex-col gap-2 text-xl w-[80%] md:w-[50%]">
+        <div className="px-2 py-10 md:px-8 flex flex-col gap-2 text-xl md:text-3xl w-[80%] md:w-[50%] chilanka-regular">
           <h1 className="text-sm md:text-lg">Good morning Jane!</h1>
           <p className="text-xs md:text-base  ">
             Your attitude determines your direction. Choose positivity and watch
