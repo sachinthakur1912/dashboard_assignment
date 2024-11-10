@@ -30,7 +30,10 @@ app.get("/auth/google/callback", async (req, res) => {
   try {
     const { tokens } = await oauth2Client.getToken(code);
     oauth2Client.setCredentials(tokens);
-    res.cookie("googleToken", tokens.access_token, { httpOnly: true });
+    res.cookie("googleToken", tokens.access_token, {
+      httpOnly: true,
+      sameSite: "none",
+    });
     res.redirect(process.env.FRONTEND_URL); // Redirect to React app
   } catch (error) {
     res.status(400).send("Authentication failed");
