@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
-import notification from "../assets/notification.png";
-import settings from "../assets/settings.png";
+import notification from "../assets/Notification.png";
+import settings from "../assets/Settings.png";
 import logout from "../assets/Logout.png";
 import profile from "../assets/profile.png";
 import frame from "../assets/Frame.png";
