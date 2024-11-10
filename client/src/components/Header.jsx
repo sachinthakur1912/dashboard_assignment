@@ -15,7 +15,7 @@ export default function Header() {
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:8080/auth/logout", {
+      await axios.get(`${import.meta.env.VITE_BACKENDURL}/auth/logout`, {
         withCredentials: true,
       });
       // setIsLoggedIn(false); // Update state to logged out

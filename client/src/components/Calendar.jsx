@@ -24,9 +24,12 @@ const MyCalendar = ({ setIsLoggedIn }) => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/calendar", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          `${import.meta.env.VITE_BACKENDURL}/api/calendar`,
+          {
+            withCredentials: true,
+          }
+        );
         console.log(response);
 
         const googleEvents = response.data.map((event) => ({

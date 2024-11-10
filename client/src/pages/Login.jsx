@@ -1,20 +1,21 @@
 import React, { useState } from "react";
-import MyCalendar from "../components/Calendar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+console.log(import.meta.env);
+`${import.meta.env.VITE_BACKENDURL}`;
 
 export default function Login() {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
-    window.location.href = "http://localhost:8080/auth/google";
+    window.location.href = `${import.meta.env.VITE_BACKENDURL}/auth/google`;
     console.log("login successful");
     navigate("/");
   };
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:8080/auth/logout", {
+      await axios.get(`${import.meta.env.VITE_BACKENDURL}/auth/logout`, {
         withCredentials: true,
       });
       setIsLoggedIn(false); // Update state to logged out
