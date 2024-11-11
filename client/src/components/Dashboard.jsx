@@ -6,7 +6,7 @@ export default function Dashboard() {
   useEffect(() => {
     localStorage.getItem("isLoggedIn")
       ? console.log("logged in")
-      : (window.location.href = "/login");
+      : (window.location.href = "/#/login");
   }, []);
   return (
     <div className="flex">
