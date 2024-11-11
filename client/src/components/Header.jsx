@@ -18,6 +18,7 @@ export default function Header() {
       await axios.get(`${import.meta.env.VITE_BACKENDURL}/auth/logout`, {
         withCredentials: true,
       });
+      localStorage.clear(); // Clear local storage
       // setIsLoggedIn(false); // Update state to logged out
       // window.location.reload(); // Refresh the page
       navigate("/login");
@@ -78,9 +79,10 @@ export default function Header() {
       {/* hamburger menu */}
 
       <div
+        style={{ zIndex: 999 }}
         className={` ${
           showMenu ? "flex" : "hidden"
-        } lg:hidden w-[80px] h-screen bg-gradient-to-t from-customOrange to-customPurple flex-col items-center justify-center gap-8 absolute right-0 z-100`}
+        } lg:hidden w-[80px] h-screen bg-gradient-to-t from-customOrange to-customPurple flex-col items-center justify-center gap-8 absolute right-0 !z-999`}
       >
         <div onClick={() => setShowMenu(false)}>
           <img src={multiply} alt="multiply" className="w-6 mr-10" />

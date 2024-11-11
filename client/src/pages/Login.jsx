@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 console.log(import.meta.env);
@@ -6,12 +6,16 @@ console.log(import.meta.env);
 
 export default function Login() {
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
-    window.location.href = `${import.meta.env.VITE_BACKENDURL}/auth/google`;
-    console.log("login successful");
-    // navigate("/");
+    try {
+      window.location.href = `${import.meta.env.VITE_BACKENDURL}/auth/google`;
+      localStorage.setItem("isLoggedIn", true);
+      console.log("login", setIsLoggedIn);
+    } catch (error) {
+      console.error("Error logging in:", error);
+      // localStorage.setItem("isLoggedIn", false);
+    }
   };
 
   return (
